@@ -1,22 +1,14 @@
 package com.example.botspring;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-@Configuration
-public class BotConfig {
+@SpringBootApplication
+@EnableScheduling
+public class BotSpringApplication {
 
-    @Value("${telegram.bot.username}")
-    private String botUsername;
-
-    @Value("${telegram.bot.token}")
-    private String botToken;
-
-    public String getBotUsername() {
-        return botUsername;
-    }
-
-    public String getBotToken() {
-        return botToken;
+    public static void main(String[] args) {
+        SpringApplication.run(BotSpringApplication.class, args);
     }
 }
